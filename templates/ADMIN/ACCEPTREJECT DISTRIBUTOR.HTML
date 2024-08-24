@@ -1,0 +1,46 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="ACCEPTREJECTDISTRIBUTOR_search">
+  <table width="1142" height="328" border="1" class="table table-dark">
+ <tr><td colspan="8"> <h3>ACCEPT/REJECT DISTRIBUTOR</h3></td></tr>
+    <tr align="right">
+        <th colspan="8" scope="row">
+          <label>
+            <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+
+            <input type="submit" name="Submit" value="SEARCH" class="btn btn-outline-primary"/>
+      </label></th>
+    </tr>
+    <tr>
+      <th width="107" scope="row">NAME</th>
+      <td width="134">GENDER</td>
+      <td width="150">ADDRESS</td>
+      <td width="181">PHONE NO </td>
+      <td width="105">EMAIL</td>
+      <td width="119">PROOF</td>
+      <td width="180">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <th height="63" scope="row">&nbsp;{{ i.firstname }}  {{ i.lastname }}</th>
+      <td>&nbsp; {{ i.gender }}</td>
+      <td>&nbsp;{{ i.address }} {{ i.post }} {{ i.pin }}</td>
+      <td>&nbsp;{{ i.phone_no }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td><a href="{{ i.proof_id.url }}" download>DOWNLOAD</a></td>
+      <td>
+          {% if i.LOGIN.type == "pending" %}
+              <a href="/Accept_dis/{{ i.LOGIN.id }}" class="btn btn-outline-success">ACCEPT</a>
+      <p><a href="/reject_dis/{{ i.LOGIN.id }}" class="btn btn-outline-danger">REJECT</a></p>
+    {% else %} {{ i.LOGIN.type }} {% endif %}
+      </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+</body>
+</html>
+{% endblock %}

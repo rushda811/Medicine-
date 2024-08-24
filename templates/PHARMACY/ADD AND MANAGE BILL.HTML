@@ -1,0 +1,35 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+<body>
+<form id="form2" name="form2" method="post" action="ADDANDMANAGEBILL_search">
+<table width="374" height="168" border="1" class="table table-dark">
+  <tr>
+    <th colspan="3" scope="row">
+      <label>
+        <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+        </label>
+      <label>
+      <input type="submit" name="Submit" value="SEARCH" class="btn btn-outline-primary"/>
+      </label>
+
+    </th>
+  </tr>
+  <tr>
+    <th width="92" scope="row">MEDICINE</th>
+    <td width="49">PRICE</td>
+
+  </tr>
+    {% for i in val  %}
+  <tr>
+    <th scope="row">&nbsp;{{ i.MEDICINE.name }}</th>
+    <td>&nbsp;{{ i.MEDICINE.price }}</td>
+    <td><a href="ADDBILL\{{ i.MEDICINE.id }}">ADD TO BILL</a></td>
+  </tr>
+    {% endfor  %}
+<tr>
+</tr>
+</table>
+  </form>
+</body>
+{% endblock %}
+

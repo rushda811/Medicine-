@@ -1,0 +1,27 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+    <form method="post" action="">
+<table width="673" height="130" border="1" class="table table-dark">
+  <tr>
+    <td>distributor name </td>
+    <td>phone</td>
+    <td>medicine</td>
+     <td>Image</td>
+    <td>quantity</td>
+    <td>date</td>
+    <td>status</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <td>&nbsp;{{ i.DISTRIBUTOR.firstname }} {{ i.DISTRIBUTOR.lastname }}</td>
+    <td> {{ i.DISTRIBUTOR.phone_no }}&nbsp;</td>
+    <td>{{ i.MEDICINE.name }}&nbsp;</td>
+      <td><img src="media/{{ i.MEDICINE.image }}" width="100dp" height="100dp" ></td>
+    <td>&nbsp;{{ i.quantity }}</td>
+    <td>{{ i.date }}&nbsp;</td>
+    <td>&nbsp;{{ i.status }}</td>
+  </tr>
+    {% endfor %}
+</table>
+    </form>
+{% endblock %}

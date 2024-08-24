@@ -1,0 +1,38 @@
+{% extends 'DISTRIBUTOR/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="DISTRIBUTORSENDREQUEST_search">
+  <table width="1232" height="349" border="1" class="table table-dark">
+    <tr>
+      <th height="50" colspan="7" scope="row"><label>
+        <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+      </label>
+        <label>
+        <input type="submit" name="Submit" value="SEARCH" class="btn btn-outline-primary"/>
+      </label></th>
+    </tr>
+    <tr>
+      <th width="208" height="126" scope="row">MEDICINE</th>
+      <td width="172">PRICE</td>
+      <td width="177">QUANTITY</td>
+      <td width="188">IMAGE</td>
+      <td width="190">MANUFACTURING DATE </td>
+      <td width="109">EXPIRY DATE </td>
+      <td width="142">&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <th height="163" scope="row">&nbsp;{{ i.name }}</th>
+      <td>&nbsp;{{ i.price }}</td>
+      <td>&nbsp;{{ i.stock }}</td>
+      <td><img src="media/{{ i.image }}" width="100dp" height="100dp" ></td>
+      <td>&nbsp;{{ i.mnf_date }}</td>
+      <td>&nbsp;{{ i.exp_date }}</td>
+      <td><a href="/dSENDREQUEST/{{ i.id }}" class="btn btn-outline-success">SEND REQUEST</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

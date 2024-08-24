@@ -1,0 +1,42 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="BLOCKUNBLOCKDISTRUBUTOR_search">
+  <table width="1142" height="328" border="1" class="table table-dark">
+    <tr>
+      <th colspan="7" scope="row"><h1> BLOCK/UNBLOCK DISTRIBUTION
+        <div align="right">
+            <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+          </div>
+        <div align="right">
+            <input type="submit" name="Submit" value="SEARCH" class="btn btn-outline-primary"/>
+          </div>
+      </label></th>
+    </tr>
+    <tr>
+      <th width="107" scope="row">NAME</th>
+      <td width="134">GENDER</td>
+      <td width="150">ADDRESS</td>
+      <td width="181">PHONE NO </td>
+      <td width="105">EMAIL</td>
+      <td width="119">&nbsp;</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <th height="63" scope="row">&nbsp;{{ i.firstname }}  {{ i.lastname }}</th>
+      <td>&nbsp;{{ i.gender }}</td>
+      <td>&nbsp;{{ i.address }}</td>
+      <td>&nbsp;{{ i.phone_no }}</td>
+      <td>&nbsp;{{ i.email }}</td>
+      <td>{% if i.LOGIN.type == 'blocked' %}<a href="/unblockd_dis/{{ i.LOGIN.id }}">UNBLOCK</a>
+      {% else %}
+          <a href="/blockd_dis/{{ i.LOGIN.id }}">BLOCK</a>
+      {% endif %}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{% endblock %}

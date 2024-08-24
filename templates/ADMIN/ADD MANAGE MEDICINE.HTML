@@ -1,0 +1,56 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="ADDMANAGEMEDICINE_search">
+  <h1 align="center">ADD/MANAGE MEDICINE</h1>
+  <div align="center">
+    <table width="758" height="258" border="1" class="table table-dark">
+     <tr><td colspan="8"> <h3>ACCEPT/REJECT PHARMACY</h3></td></tr>
+      <tr>
+        <th colspan="8" scope="row"><label>
+          <div align="right">
+            <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+            </div>
+        </label>
+          <label>
+          
+          <div align="right">
+            <input type="submit" name="Submit2" value="SEARCH" class="btn btn-outline-primary"/>
+            </div>
+        </label></th>
+      </tr>
+      <tr>
+        <th scope="row">MEDICINE</th>
+        <td>IMAGE</td>
+        <td>PRICE</td>
+        <td>QUANTITY</td>
+        <td>MANUFACTURE DATE </td>
+        <td>EXPIRY DATE </td>
+        <td>DETAILS</td>
+        <td>&nbsp;</td>
+      </tr>
+        {% for i in val %}
+      <tr>
+        <th scope="row">&nbsp;{{ i.name }}</th>
+        <td>&nbsp; <img src="media/{{ i.image }}" width="100dp" height="100dp" ></td>
+        <td>&nbsp;{{ i.price}} </td>
+        <td>&nbsp;{{ i.stock }} </td>
+        <td>&nbsp;{{ i.mnf_date}}</td>
+        <td>{{ i.exp_date }}&nbsp;</td>
+        <td>&nbsp;{{ i.details }}</td>
+        <td><p><a href="EDITMEDICINE/{{ i.id }}"  class="fa fa-edit green-color" style="font-size: 30px;"></a></p>
+        <p><a href="delete_med/{{ i.id }}" class="bi bi-trash3 red-color" style="font-size: 30px;"></a></p></td>
+      </tr>
+        {% endfor %}
+      </table>
+  </div>
+  <p>
+    <label></label>
+    <div align="center">
+    <a href="ADDMEDICINE" class="fa fa-plus-square yellow-color" aria-hidden="true" style="font-size: 40px;"></a>
+      </div>
+  </p>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends 'ADMIN/index.html' %}
+{% block body %}
+
+<body>
+<form action="medcode" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <h1 align="center">ADD MEDICINE</h1>
+  <div align="center">
+    <table width="622" height="359" border="1" class="table table-dark">
+      <tr>
+        <th width="157" scope="row">MEDICINE</th>
+        <td width="420"><label>
+          <input type="text" name="textfield" required  />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">IMAGE</th>
+        <td><label>
+          <input type="file" name="file" required class="form-control" style="background-color: var(--bs-table-bg);"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">PRICE</th>
+        <td><label>
+          <input type="text" name="textfield2" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">QUANTITY</th>
+        <td><label>
+          <input type="text" name="textfield3" required/>
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">MANUFACTURE DATE </th>
+        <td><label>
+          <input type="DATE" name="textfield4" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">EXPIRY DATE </th>
+        <td><label>
+          <input type="DATE" name="textfield5" required />
+        </label></td>
+      </tr>
+      <tr>
+        <th scope="row">DETAILS</th>
+        <td><label>
+          <textarea name="textarea" required></textarea>
+        </label></td>
+      </tr>
+      <tr align="center">
+        <th colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="ADD" class="btn btn-success"/>
+          </label>
+          <div align="center"></div>
+        <div align="center"></div></th>
+      </tr>
+    </table>
+  </div>
+  <p>&nbsp;  </p>
+</form>
+</body>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'DISTRIBUTOR/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/send_req_post">
+  <h1 align="center">SEND REQUEST</h1>
+  <div align="center">
+    <table width="545" height="203" border="1" class="table table-dark">
+      <tr>
+        <th scope="row">ENTER REQUIRED QUANTITY
+          <label>
+          <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+          </label>            <input type="submit" name="Submit" value="SEND" class="btn btn-outline-primary"/>
+</th>
+        <th scope="row"><label>
+          <div align="center">
+            </div>
+        </label></th>
+      </tr>
+      </table>
+  </div>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+</body>
+{% endblock %}

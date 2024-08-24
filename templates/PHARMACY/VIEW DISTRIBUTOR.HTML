@@ -1,0 +1,34 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="VIEWDISTRIBUTOR_search">
+<table width="1188" height="229" border="1" class="table table-dark">
+  <tr>
+    <th height="67" colspan="6" scope="row"><div align="right">
+        <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+          <input type="submit" name="Submit" required class="btn btn-outline-primary"/>
+        </div>
+     </th>
+  </tr>
+  <tr>
+    <th width="164" scope="row">NAME</th>
+    <td width="205">GENDER</td>
+    <td width="229">ADDRESS</td>
+    <td width="276">PHONE NO </td>
+    <td width="161">EMAIL</td>
+    <td width="113">PROOF</td>
+  </tr>
+    {% for i in val %}
+  <tr>
+    <th height="63" scope="row">&nbsp;{{ i.firstname }}  {{ i.lastname }}</th>
+    <td>&nbsp;{{ i.gender }}</td>
+    <td>&nbsp;{{i.location }}  {{ i.pin }}</td>
+    <td>&nbsp;{{ i.phone_no }}</td>
+    <td>&nbsp;{{ i.email }}</td>
+    <td><a href="{{ i.proof_id.url }}"download>DOWNLOAD</a></td>
+  </tr>
+    {% endfor %}
+</table>
+</form>
+</body>
+{% endblock %}

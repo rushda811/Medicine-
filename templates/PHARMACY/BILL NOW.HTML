@@ -1,0 +1,40 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addbillnow">
+  <table width="436" height="253" border="1" class="table table-dark">
+    <tr>
+      <td width="193">USERNAME
+      <label></label></td>
+      <td width="227" height="37"><label>
+        <input type="text" name="textfield2" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>PHONE</td>
+      <td height="37"><label>
+        <input type="text" name="textfield3" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>EMAIL</td>
+      <td height="37"><label>
+        <input type="text" name="textfield4" required />
+      </label></td>
+    </tr>
+    <tr>
+      <td>TOTAL</td>
+      <td height="37">{{ tot }} /-</td>
+    </tr>
+    <tr>
+      <td height="91" colspan="2"><label></label><label>
+        <div align="center">
+          <input type="submit" name="Submit" value="BILL NOW" class="btn btn-success"/>
+          </div>
+      </label></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

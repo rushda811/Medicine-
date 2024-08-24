@@ -1,0 +1,45 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+<body>
+<body>
+<form id="form1" name="form1" method="post" action="CHECKMEDICINE_search">
+  <h1 align="center"> CHECK MEDICINE</h1>
+  <div align="center">
+    <table width="758" height="212" border="1" class="table table-dark">
+      <tr>
+        <th height="76" colspan="7" scope="row"><label>
+          <div align="right">
+            <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+            <input type="submit" name="Submit2" value="SEARCH" class="btn btn-outline-primary"/>
+          </div>
+          </th>
+      </tr>
+      <tr>
+        <th scope="row">MEDICINE</th>
+        <td>IMAGE</td>
+        <td>PRICE</td>
+        <td>QUANTITY</td>
+        <td>MANUFACTURE DATE </td>
+        <td>EXPIRY DATE </td>
+        <td>DETAILS</td>
+      </tr>
+        {% for i in val %}
+      <tr>
+        <th scope="row">{{i.name }}</th>
+        <td><img src="media/{{ i.image }}" width="100dp" height="100dp" ></td>
+        <td>&nbsp;{{ i.price }}</td>
+        <td>&nbsp;{{i.stock }}</td>
+        <td>&nbsp;{{i.mnf_date }}</td>
+        <td>&nbsp;{{i.exp_date}}</td>
+        <td>&nbsp;{{i.details }}</td>
+      </tr>
+        {% endfor %}
+    </table>
+  </div>
+  <p>
+    <label></label>
+  </p>
+  </p>
+</form>
+</body>
+{% endblock %}

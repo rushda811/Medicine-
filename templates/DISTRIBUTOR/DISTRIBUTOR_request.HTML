@@ -1,0 +1,29 @@
+{% extends 'DISTRIBUTOR/index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="1178" height="319" border="1" class="table table-dark">
+
+    <tr>
+      <th scope="row">MEDICINE</th>
+      <td>QUANTITY</td>
+      <td>DATE</td>
+      <td>STATUS</td>
+
+    </tr>
+      {% for i in val %}
+    <tr>
+      <th scope="row">&nbsp;{{ i.MEDICINE.name}}</th>
+      <td>&nbsp;{{ i.quantity }}</td>
+      <td>&nbsp;{{ i.date }}</td>
+      <td>&nbsp;{{ i.status}}</td>
+
+    </tr>
+      {% endfor %}
+  <tr>
+      <td colspan="4"><div align="center"><a href="/DISTRIBUTORSENDREQUEST" class="fa fa-plus-square yellow-color" aria-hidden="true" style="font-size: 40px;"></a> </div> </td>
+  </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

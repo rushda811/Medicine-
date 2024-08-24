@@ -1,0 +1,32 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+<body>
+
+<body>
+<form id="form1" name="form1" method="post" action="{%  url 'add' %}">
+  <h1 align="center">ADD BILL</h1>
+    <center>
+  <table width="468" height="334" border="1" class="table table-dark">
+    <tr>
+      <td width="458" height="328"><p>MEDICINE: {{ val.name }}</p>
+
+      <p>PRICE : {{ val.price }}</p>
+      <p>STOCK :{{ val.stock }}</p>
+      <p>MANUFACTURE DATE :{{ val.mnf_date }}</p>
+      <p>EXPIRY DATE :{{ val.exp_date }}</p>
+      <p>ENTER QUANTITY
+        <label>
+        <input type="text" name="textfield" required class="btn btn-outline-primary"/>
+        </label></p>
+      <p>
+        <label></label>
+        <label></label>
+        <input type="submit" name="Submit" value="CONTINUE" class="btn btn-outline-success"/>
+        <input type="submit" name="Submit" value="FINISH" class="btn btn-outline-success"/>
+      </p></td>
+    </tr>
+  </table></form></center>
+  <p>&nbsp;  </p>
+</form>
+</body>
+{% endblock %}

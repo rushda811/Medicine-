@@ -1,0 +1,29 @@
+{% extends 'PHARMACY/index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h1 align="center">PHARMACY HOME</h1>
+  <div align="center">
+    <table width="249" height="222" border="1" class="table table-dark">>
+      <tr>
+        <th scope="row"><a href="/VIEWDISTRIBUTOR">VIEW DISTRIBUTORS</a></th>
+      </tr>
+      <tr>
+        <th scope="row"><a href="/PHARMACYSENDREQUEST">SEND REQUEST/VIEW STATUS</a></th>
+      </tr>
+      <tr>
+        <th scope="row"><a href="/ADDANDMANAGEBILL">ADD AND MANAGE BILL</a></th>
+      </tr>
+      <tr>
+        <th scope="row"><a href="/CHECKMEDICINE">CHECK MEDICINE</a></th>
+      </tr>
+      <tr>
+        <th scope="row"><a href="/">LOGOUT</a></th>
+      </tr>
+      </table>
+  </div>
+  <p>&nbsp;  </p>
+</form>
+</body>
+{% endblock %}
